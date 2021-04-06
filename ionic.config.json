@@ -1,0 +1,7 @@
+{
+  "name": "doctors_task",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

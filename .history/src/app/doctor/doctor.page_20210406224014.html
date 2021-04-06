@@ -1,0 +1,62 @@
+<ion-content>
+  <section class="hero">
+    <div class="hero-body box-border-bottom">
+      <div class="header ion-flex ion-align-items-center">
+        <ion-button (click)="goBack()" class="back-btn" shape="round" fill="clear">
+          <ion-icon color="light" name="arrow-back"></ion-icon>
+        </ion-button>
+        <div class="avatar-img ion-flex ion-justify-content-center">
+          <ion-avatar>
+            <img src="assets/images/image_2.png">
+          </ion-avatar>
+        </div>
+        <div class="btns">
+          <ion-button shape="round" fill="clear">
+            <ion-icon color="light" name="share-social-outline"></ion-icon>
+          </ion-button>
+          <ion-button shape="round" fill="clear">
+            <ion-icon color="light" name="heart-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+
+      <div class="details ion-flex ion-justify-content-center ion-align-items-center">
+        <h1>{{ doctor?.doctorName }}</h1>
+        <p>{{doctor?.practiceName}}</p>
+        <!-- TODO: Add Rating Component-->
+        <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
+        <div class="props">
+          <p><ion-icon color="light" name="disc-outline"></ion-icon>&nbsp; Price {{ doctor?.price }} EGP</p>
+          <p><ion-icon color="light" name="disc-outline"></ion-icon>&nbsp;{{ doctor?.waiting_time}}</p>
+          <p (click)="map(doctor.practiceLatitude,doctor.practiceLongitude)"><ion-icon color="light" name="pin-outline"></ion-icon>&nbsp;Map View</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info  ion-padding">
+      <h4>{{doctor?.areaName}}</h4>
+      <p>{{doctor?.practiceAddress}}</p>
+    </div>
+  </section>
+
+
+  <section class="booking">
+    <h2>Booking</h2>
+    <div class="scroll-content" scrollx="true" >
+        <!-- <div class="booking-box" *ngFor=" let slot of clinicSlots" [hidden]="status != 'Available'"> -->
+          <div class="booking-box" *ngFor=" let slot of clinicSlots" >
+          <div class="day"><h5>{{slot?.dateName}}</h5></div>
+          <div class="time ion-flex">
+            <div class="ion-flex ion-justify-content-center"><p>From</p> <p>{{slot?.slotRangeFrom}}</p></div>
+            <div class="ion-flex ion-justify-content-center"><p>To</p> <p>{{slot?.slotRangeTo }} {{slot?.slots[0].doctor_schedule_time_blocks_id}}</p></div>
+          </div>
+          <ion-button color="danger" fill="outline" shape="round" (click)="booking(slot?.slots[0])">
+            Book
+          </ion-button>
+        </div>
+   
+  
+    </div>
+  </section>
+
+</ion-content>

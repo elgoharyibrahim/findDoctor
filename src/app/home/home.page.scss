@@ -1,0 +1,45 @@
+.header {
+  background: linear-gradient(#662677, #45237B);
+  padding-bottom: 10vh;
+  border-bottom-right-radius: 12vw;
+  border-bottom-left-radius: 12vw;
+
+  .cta-actions {
+    display: flex;
+    flex-flow: row-reverse;
+  }
+  .searchbar {
+    border-radius: 30px;
+    border: 1px solid #7f4d8b;
+    overflow: hidden;
+    margin: 16px;
+    position: relative;
+    height: 50px;
+    input {
+      display: inline-block;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      outline: none;
+      color: white;
+      height: 50px;
+      background-color: transparent;
+      &::placeholder {
+        color: #bfa7bf;
+      }
+    }
+
+    ion-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 40px;
+    }
+
+  }
+}
+
+.home-list {
+  margin-top: -60px;
+  background: transparent;
+}

@@ -1,0 +1,33 @@
+
+
+<ion-content [fullscreen]="true">
+
+  <section class="header">
+    <ion-button fill="clear">
+      <ion-icon name="menu" color="light"></ion-icon>
+    </ion-button>
+    <div class="searchbar">
+      <input [(ngModel)]="name" type="search" placeholder="Mina Adly">
+    <ion-button (click)="searchByName()" fill="clear" shape="round">
+      <ion-icon color="light" name="search"></ion-icon>
+    </ion-button>
+    </div>
+    <div class="cta-actions">
+      <ion-button size="small" fill="clear" color="light">
+        Filter</ion-button>
+      <ion-button size="small" fill="clear" color="light">
+        <img  src="assets/images/sort.png"> 
+        &nbsp;
+        Sorting
+      </ion-button>
+      <ion-button size="small" fill="clear" color="light">
+        <ion-icon name="map-custom-icon"></ion-icon>&nbsp;
+        Map View</ion-button>
+    </div>
+  </section>
+
+  <section class="ion-padding home-list">
+    <app-doctor-holder  [doctors]="doctors" ></app-doctor-holder>
+  </section>
+
+</ion-content>

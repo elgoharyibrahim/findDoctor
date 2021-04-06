@@ -1,0 +1,148 @@
+$primaryColor: #44356B;
+h3 {
+  font-size: 21px;
+}
+.hero {
+  .hero-body {
+    background: linear-gradient(#662677, #45237B);
+    padding: 4vh 24px 5vh;
+
+    .header {
+      .back-btn {
+        width: 70px;
+        --padding-start: 0;
+        --padding-end: 0;
+      }
+
+      .avatar-img {
+        flex: 1;
+
+        ion-avatar {
+          width: 80px;
+          height: 80px;
+          box-shadow: 2px 2px 23px #260648;;
+        }
+
+      }
+
+      .btns {
+        width: 70px;
+
+        ion-button {
+          --padding-start: 4px;
+          --padding-end: 4px;
+
+          button {
+            padding: 0 !important;
+
+          }
+        }
+      }
+    }
+
+    .details {
+      flex-direction: column;
+      color: white;
+
+      h1 {
+        font-weight: bolder;
+      }
+
+      & > p {
+        &:first-of-type {
+          text-align: center;
+          color: #eeeeee;
+        }
+      }
+
+      .props {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & > p {
+          width: 50%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+
+  .info {
+    background-color: #F6F4FF;
+    margin: -40px 16px 10px;
+    border-radius: 20px;
+    text-align: center;
+
+    h4 {
+      font-weight: bolder;
+    }
+
+    p {
+      color: #44356B
+    }
+  }
+
+
+}
+
+.booking {
+  h2 {
+    font-weight: bolder;
+    margin-left: 16px;
+    color: #333;
+  }
+
+  .scroll-content {
+    overflow-x: scroll;
+    display: flex;
+    margin-left: 16px;
+
+    .booking-box {
+      text-align: center;
+      margin: 0 5px;
+      min-width: 40%;
+      padding-bottom: 16px;
+      background-color: #F5F5FF;
+      min-height: 200px;
+      border-radius: 20px;
+      overflow: hidden;
+      ion-button {
+        height: 40px;
+      }
+      .day {
+
+        background-color: #F2EDFF;
+        padding: 16px;
+
+        h3 {
+          text-align: start;
+          margin: 0;
+          font-weight: bold;
+          color: $primaryColor;
+        }
+      }
+
+      .time {
+        margin-top: 12px;
+        padding: 8px 16px;
+        flex-direction: column;
+
+        & > div {
+          p {
+            flex: 1;
+            margin: 8px 0;
+            color: #44356B;
+            text-align: start;
+
+            &:last-child {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,34 @@
+<div *ngFor="let doctor of doctors" class="doctor-holder " [hidden]="doctor.available_from !='No schedule available'">
+  <div class="body"  >
+    <div class="avatar">
+      <ion-avatar>
+        <img [src]="doctor.doctorImageUrl">
+      </ion-avatar>
+      <!-- TODO: Add Rating Component-->
+      <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
+    </div>
+    <div class="info">
+      <h6><b> {{ doctor?.doctorName }}</b></h6>
+      <p>
+        <ion-icon color="danger" name="disc-outline"></ion-icon>
+       {{ doctor.degrees }}</p>
+      <p>
+        <ion-icon color="danger" name="disc-outline"></ion-icon>
+        Price: {{ doctor?.price }} EGP</p>
+      <p>
+        <ion-icon color="danger" name="disc-outline"></ion-icon>
+        {{ doctor?.areaName }}</p>
+    </div>
+    <div class="nav-btn">
+      <ion-button fill="clear" size="large">
+        <ion-icon color="danger" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+  <div class="footer ion-flex ion-justify-content-between">
+    <p>{{ doctor?.available_from }}</p>
+    <ion-button (click)="openDoctor(doctor)" color="danger" fill="outline" shape="round">
+      Book
+    </ion-button>
+  </div>
+</div>
