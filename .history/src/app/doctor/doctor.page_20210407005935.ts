@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertController, LoadingController, NavController, Platform } from '@ionic/angular';
+import { AlertController, LoadingController, NavController } from '@ionic/angular';
 import { ApiService } from '../services/api.service';
 import { UrlProvider } from '../services/urls';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
@@ -15,14 +15,11 @@ export class DoctorPage implements OnInit {
   clinicSlots: unknown;
   doctor:any;
   destination: any =  {};
-  urlBrowser;
-
-  constructor( public platform:Platform,private iab: InAppBrowser,private geolocation: Geolocation,public alertController: AlertController,public _apiService: ApiService,private route: ActivatedRoute,private urlProvider: UrlProvider, public loadingController: LoadingController,
+  constructor(private iab: InAppBrowser,private geolocation: Geolocation,public alertController: AlertController,public _apiService: ApiService,private route: ActivatedRoute,private urlProvider: UrlProvider, public loadingController: LoadingController,
     private router: Router, public navCtrl: NavController ) { 
       this.geolocation.getCurrentPosition().then((resp) => {
-        // this.destination.lat =   resp.coords.latitude;
-        // this.destination.lng = resp.coords.longitude;
-        this.destination= resp.coords.latitude+','+resp.coords.longitude ;
+        this.destination.lat =   resp.coords.latitude;
+        this.destination.lng = resp.coords.longitude;
        }).catch((error) => {
          console.log('Error getting location', error);
        });
@@ -111,21 +108,6 @@ export class DoctorPage implements OnInit {
   }
  map(lat,lng){
 
-  let source=lat+","+lng;
-
-  if(this.platform.is('ios')){
-
-    this.urlBrowser='https://maps.apple.com/?q='+source
-    this.iab.create(
-      this.urlBrowser,
-      "_system",
-      { location: "no", toolbar: "no" }
-    );
-  } else {
-      // this.urlBrowser="https://www.google.com/maps/dir/"+dest+"/"+ go +"/@28.1185234,34.1912139,6z/data=!4m2!4m1!3e0?hl=en-US"
-      window.open("https://www.google.com/maps/dir/"+this.destination+"/"+ source +"/@28.1185234,34.1912139,6z/data=!4m2!4m1!3e0?hl=en-US", '_system');
-
-    }
  }
   goBack() {
     this.navCtrl.back({animated: true});

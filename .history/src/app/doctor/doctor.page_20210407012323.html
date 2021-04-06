@@ -21,12 +21,12 @@
       </div>
 
       <div class="details ion-flex ion-justify-content-center ion-align-items-center">
-        <h3>{{ doctor?.doctorName }}</h3>
+        <h1>{{ doctor?.doctorName }}</h1>
         <p>{{doctor?.practiceName}}</p>
         <!-- TODO: Add Rating Component-->
         <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
         <div class="props">
-          <p><img  src="assets/images/fees.png"> {{ doctor?.price | currency:'EGP':true}} </p>
+          <p><img  src="assets/images/fees.png"> Price {{ doctor?.price | currency:'EGP':true}} </p>
           <p><ion-icon  name="time"></ion-icon>&nbsp;{{ doctor?.waiting_time}}</p>
           <p (click)="map(doctor?.practiceLatitude,doctor?.practiceLongitude)"><ion-icon color="light" name="pin-outline"></ion-icon>&nbsp;Map View</p>
         </div>

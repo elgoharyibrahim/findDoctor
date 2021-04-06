@@ -115,7 +115,7 @@ export class DoctorPage implements OnInit {
 
   if(this.platform.is('ios')){
 
-    this.urlBrowser='https://maps.apple.com/?q='+source
+    this.urlBrowser='https://maps.apple.com/?q='+go
     this.iab.create(
       this.urlBrowser,
       "_system",

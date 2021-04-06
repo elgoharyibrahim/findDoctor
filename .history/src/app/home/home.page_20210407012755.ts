@@ -70,10 +70,10 @@ const data = {
 sortName() {
   this.nameFlag = !this.nameFlag;
   if (this.nameFlag == true) {
-    this.doctors = this.doctors.sort((a, b) => a.doctorName.localeCompare(b.doctorName));
+    this.doctors = this.doctors.sort((a, b) => a.name.localeCompare(b.name));
   }
   else {
-    this.doctors = this.doctors.sort((a, b) => b.doctorName.localeCompare(a.doctorName));
+    this.doctors = this.doctors.sort((a, b) => b.name.localeCompare(a.name));
   }
 }
 
